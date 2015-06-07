@@ -20,7 +20,7 @@ package de.schildbach.pte;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import de.schildbach.pte.dto.Line;
 import de.schildbach.pte.dto.Position;

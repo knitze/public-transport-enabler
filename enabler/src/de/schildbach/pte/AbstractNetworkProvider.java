@@ -25,7 +25,7 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import com.google.common.base.Strings;
 

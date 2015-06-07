@@ -22,17 +22,16 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.io.Serializable;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import com.google.common.base.Objects;
 
 /**
  * @author Andreas Schildbach
  */
+@SuppressWarnings("serial")
 public final class Position implements Serializable
 {
-	private static final long serialVersionUID = 5800904192562764917L;
-
 	public final String name;
 	public final @Nullable String section;
 

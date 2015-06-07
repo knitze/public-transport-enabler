@@ -20,7 +20,7 @@ package de.schildbach.pte.dto;
 import java.io.Serializable;
 import java.util.Set;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;

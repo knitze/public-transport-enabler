@@ -34,7 +34,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -500,7 +500,7 @@ public abstract class AbstractTsiProvider extends AbstractNetworkProvider
 		}
 		catch (final ParseException e)
 		{
-			throw new JSONException(e);
+			throw new JSONException(e.getLocalizedMessage());
 		}
 
 		final JSONArray stepArray = ptrInfo.getJSONObject("steps").getJSONArray("Step");
@@ -521,7 +521,7 @@ public abstract class AbstractTsiProvider extends AbstractNetworkProvider
 			}
 			catch (final ParseException e)
 			{
-				throw new JSONException(e);
+				throw new JSONException(e.getLocalizedMessage());
 			}
 		}
 

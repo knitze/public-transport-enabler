@@ -17,6 +17,8 @@
 
 package de.schildbach.pte;
 
+import android.support.annotation.Nullable;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
@@ -40,8 +42,6 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.annotation.Nullable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -1111,8 +1111,6 @@ public abstract class AbstractEfaProvider extends AbstractNetworkProvider
 				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
 			if ("RB-Bahn".equals(trainName))
 				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
-			if (trainType == null && "RB67/71".equals(trainNum))
-				return new Line(id, network, Product.REGIONAL_TRAIN, trainNum);
 			if ("RE-Bahn".equals(trainName))
 				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
 			if ("REX".equals(trainType)) // RegionalExpress, Österreich
@@ -1153,7 +1151,7 @@ public abstract class AbstractEfaProvider extends AbstractNetworkProvider
 				return new Line(id, network, Product.REGIONAL_TRAIN, "EB");
 			if ("EBx".equals(trainType) || "Erfurter Bahn Express".equals(trainName))
 				return new Line(id, network, Product.REGIONAL_TRAIN, "EBx" + trainNum);
-			if ("Erfurter Bahn Express".equals(longName) && symbol == null)
+			if ("Erfurter Bahn Express".equals(longName))
 				return new Line(id, network, Product.REGIONAL_TRAIN, "EBx");
 			if ("MRB".equals(trainType) || "Mitteldeutsche Regiobahn".equals(trainName))
 				return new Line(id, network, Product.REGIONAL_TRAIN, "MRB" + trainNum);
@@ -1163,9 +1161,7 @@ public abstract class AbstractEfaProvider extends AbstractNetworkProvider
 				return new Line(id, network, Product.REGIONAL_TRAIN, "NEB" + trainNum);
 			if ("OE".equals(trainType) || "Ostdeutsche Eisenbahn GmbH".equals(trainName))
 				return new Line(id, network, Product.REGIONAL_TRAIN, "OE" + trainNum);
-			if ("Ostdeutsche Eisenbahn GmbH".equals(longName) && symbol == null)
-				return new Line(id, network, Product.REGIONAL_TRAIN, "OE");
-			if ("ODE".equals(trainType) && symbol != null)
+			if ("ODE".equals(trainType))
 				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
 			if ("OLA".equals(trainType) || "Ostseeland Verkehr GmbH".equals(trainName))
 				return new Line(id, network, Product.REGIONAL_TRAIN, "OLA" + trainNum);

@@ -20,7 +20,7 @@ package de.schildbach.pte;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import com.google.common.base.Strings;
 

@@ -36,12 +36,10 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Charsets;
 
@@ -64,8 +62,6 @@ public final class ParserUtils
 	private static final int SCRAPE_CONNECT_TIMEOUT = 5000;
 	private static final int SCRAPE_READ_TIMEOUT = 15000;
 	private static HttpCookie sessionCookie;
-
-	private static final Logger log = LoggerFactory.getLogger(ParserUtils.class);
 
 	public static final CharSequence scrape(final String url) throws IOException
 	{
@@ -134,7 +130,7 @@ public final class ParserUtils
 	public static final InputStream scrapeInputStream(final String urlStr, final String postRequest, Charset requestEncoding, final String referer,
 			final String sessionCookieName, final String authorization) throws IOException
 	{
-		log.debug("{}: {}", postRequest != null ? "POST" : "GET", urlStr);
+//		log.debug("{}: {}", postRequest != null ? "POST" : "GET", urlStr);
 
 		if (requestEncoding == null)
 			requestEncoding = Charsets.ISO_8859_1;
@@ -250,10 +246,10 @@ public final class ParserUtils
 			else
 			{
 				final String message = "got response: " + responseCode + " " + connection.getResponseMessage();
-				if (tries-- > 0)
-					log.info("{}, retrying...", message);
-				else
-					throw new IOException(message + ": " + url);
+//				if (tries-- > 0)
+//					log.info("{}, retrying...", message);
+//				else
+//					throw new IOException(message + ": " + url);
 			}
 		}
 	}

@@ -17,12 +17,12 @@
 
 package de.schildbach.pte.dto;
 
+import android.support.annotation.Nullable;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.io.Serializable;
 import java.util.Currency;
-
-import javax.annotation.Nullable;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
@@ -30,6 +30,7 @@ import com.google.common.base.Objects;
 /**
  * @author Andreas Schildbach
  */
+@SuppressWarnings("serial")
 public final class Fare implements Serializable
 {
 	public enum Type
@@ -37,13 +38,12 @@ public final class Fare implements Serializable
 		ADULT, CHILD, YOUTH, STUDENT, MILITARY, SENIOR, DISABLED
 	}
 
-	private static final long serialVersionUID = -6136489996930976421L;
-
 	public final String network;
 	public final Type type;
 	public final Currency currency;
 	public final float fare;
-	public final @Nullable String unitName;
+	public final @Nullable
+	String unitName;
 	public final @Nullable String units;
 
 	public Fare(final String network, final Type type, final Currency currency, final float fare, final String unitName, final String units)

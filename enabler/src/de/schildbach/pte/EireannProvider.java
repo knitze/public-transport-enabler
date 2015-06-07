@@ -23,7 +23,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import de.schildbach.pte.dto.Line;
 import de.schildbach.pte.dto.Location;

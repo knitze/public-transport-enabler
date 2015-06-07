@@ -7,7 +7,7 @@ package de.schildbach.pte.util;
 
 import java.io.IOException;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

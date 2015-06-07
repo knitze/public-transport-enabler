@@ -23,7 +23,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Locale;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
@@ -32,10 +32,9 @@ import com.google.common.base.Objects;
 /**
  * @author Andreas Schildbach
  */
+@SuppressWarnings("serial")
 public final class Stop implements Serializable
 {
-	private static final long serialVersionUID = 5034616799626145715L;
-
 	public final Location location;
 	public final @Nullable Date plannedArrivalTime;
 	public final @Nullable Date predictedArrivalTime;

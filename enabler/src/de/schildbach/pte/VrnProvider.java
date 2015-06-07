@@ -17,7 +17,7 @@
 
 package de.schildbach.pte;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import com.google.common.base.Charsets;
 

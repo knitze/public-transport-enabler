@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import de.schildbach.pte.dto.Line;
 import de.schildbach.pte.dto.Point;
@@ -70,11 +70,6 @@ public class MvvProvider extends AbstractEfaProvider
 				return new Line(id, network, Product.SUBURBAN_TRAIN, "A");
 			if ("DB AG".equals(trainName))
 				return new Line(id, network, null, symbol);
-		}
-		else if ("1".equals(mot))
-		{
-			if ("S".equals(symbol) && "Pendelverkehr".equals(name))
-				return new Line(id, network, Product.SUBURBAN_TRAIN, "S⇆");
 		}
 
 		return super.parseLine(id, network, mot, symbol, name, longName, trainType, trainNum, trainName);

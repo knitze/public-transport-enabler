@@ -22,7 +22,7 @@ import java.util.Date;
 import java.util.EnumSet;
 import java.util.Set;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import de.schildbach.pte.dto.Location;
 import de.schildbach.pte.dto.LocationType;

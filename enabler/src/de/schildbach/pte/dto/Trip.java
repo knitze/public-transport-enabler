@@ -17,6 +17,8 @@
 
 package de.schildbach.pte.dto;
 
+import android.support.annotation.Nullable;
+
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -27,8 +29,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
-import javax.annotation.Nullable;
-
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Objects;
@@ -36,7 +36,7 @@ import com.google.common.base.Objects;
 /**
  * @author Andreas Schildbach
  */
-public final class Trip implements Serializable
+public final class Trip implements Serializable, Comparable<Trip>
 {
 	private static final long serialVersionUID = 2508466068307110312L;
 
@@ -67,7 +67,8 @@ public final class Trip implements Serializable
 		return legs.get(0).getDepartureTime();
 	}
 
-	public @Nullable Public getFirstPublicLeg()
+	public @Nullable
+	Public getFirstPublicLeg()
 	{
 		for (final Leg leg : legs)
 			if (leg instanceof Public)
@@ -265,6 +266,11 @@ public final class Trip implements Serializable
 				+ lastPublicLegArrivalTime != null ? String.format(Locale.US, "%ta %<tR", lastPublicLegArrivalTime) : "null");
 		helper.add("numChanges", numChanges);
 		return helper.toString();
+	}
+
+	@Override
+	public int compareTo(Trip trip) {
+		return this.getId().compareTo(trip.getId());
 	}
 
 	public abstract static class Leg implements Serializable

@@ -20,7 +20,7 @@ package de.schildbach.pte;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import de.schildbach.pte.dto.Line;
 import de.schildbach.pte.dto.Product;
@@ -49,18 +49,6 @@ public class AvvProvider extends AbstractEfaProvider
 		if ("0".equals(mot))
 		{
 			if ("Regionalbahn".equals(trainName) && symbol != null)
-				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
-
-			// Streikfahrplan
-			if ("R1S".equals(symbol))
-				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
-			if ("R4S".equals(symbol))
-				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
-			if ("R6S".equals(symbol))
-				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
-			if ("R7S".equals(symbol))
-				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
-			if ("R8S".equals(symbol))
 				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
 		}
 

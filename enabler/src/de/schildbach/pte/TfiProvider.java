@@ -19,7 +19,7 @@ package de.schildbach.pte;
 
 import java.util.Set;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import de.schildbach.pte.dto.Line;
 import de.schildbach.pte.dto.Product;

@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import com.google.common.base.Charsets;
 
@@ -80,6 +80,8 @@ public class VrrProvider extends AbstractEfaProvider
 	{
 		if ("0".equals(mot))
 		{
+			if (trainType == null && "RB67/71".equals(trainNum))
+				return new Line(id, network, Product.REGIONAL_TRAIN, trainNum);
 			if ("Regionalbahn".equals(trainName) && symbol != null)
 				return new Line(id, network, Product.REGIONAL_TRAIN, symbol);
 			if ("NordWestBahn".equals(trainName) && symbol != null)

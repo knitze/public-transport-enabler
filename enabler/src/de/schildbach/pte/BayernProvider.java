@@ -25,7 +25,7 @@ import java.util.Date;
 import java.util.EnumSet;
 import java.util.Set;
 
-import javax.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Strings;
@@ -73,11 +73,6 @@ public class BayernProvider extends AbstractEfaProvider
 				return new Line(id, network, Product.REGIONAL_TRAIN, "M" + trainNum);
 			if ("ZUG".equals(trainType) && trainNum != null)
 				return new Line(id, network, Product.REGIONAL_TRAIN, trainNum);
-		}
-		else if ("1".equals(mot))
-		{
-			if ("ABR".equals(trainType) || "ABELLIO Rail NRW GmbH".equals(trainName))
-				return new Line(id, network, Product.SUBURBAN_TRAIN, "ABR" + trainNum);
 		}
 		else if ("16".equals(mot))
 		{
