@@ -19,9 +19,6 @@ package de.schildbach.pte;
 
 import android.support.annotation.Nullable;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.base.Preconditions.checkState;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -40,14 +37,13 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -81,6 +77,9 @@ import de.schildbach.pte.exception.InvalidDataException;
 import de.schildbach.pte.exception.ParserException;
 import de.schildbach.pte.util.ParserUtils;
 import de.schildbach.pte.util.XmlPullUtil;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkState;
 
 /**
  * @author Andreas Schildbach
@@ -116,7 +115,7 @@ public abstract class AbstractEfaProvider extends AbstractNetworkProvider
 
 	private final XmlPullParserFactory parserFactory;
 
-	private static final Logger log = LoggerFactory.getLogger(AbstractEfaProvider.class);
+	private static final Logger log = Logger.getLogger(AbstractEfaProvider.class.getSimpleName());
 
 	@SuppressWarnings("serial")
 	private static class Context implements QueryTripsContext
